@@ -5,6 +5,7 @@ import PageNavbar           from '../components/navbar.js';
 import ButtonExit           from "../components/button-exit";
 import CharacterBuffs       from "../components/character-buffs";
 import ResetRaidbossesSpawn from "../components/reset-raidbosses-spawn";
+import AccountCreate        from "../components/account-create";
 
 
 export default function Main() {
@@ -15,12 +16,15 @@ export default function Main() {
                 <PageNavbar/>
             </div>
             <div className="group">
-                <CharacterBuffs />
+                <CharacterBuffs/>
             </div>
             <div className="group">
-                <ResetRaidbossesSpawn />
+                <ResetRaidbossesSpawn/>
             </div>
-            <ButtonExit />
+            <div className="group">
+                <AccountCreate />
+            </div>
+            <ButtonExit/>
         </div>
     );
 }
