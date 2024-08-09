@@ -1,0 +1,178 @@
+// SCSS variables are information about icon's compiled state, stored under its original file name
+//
+// .icon-home {
+//   width: $icon-home-width;
+// }
+//
+// The large array-like variables contain all information about a single icon
+// $icon-home: x y offset_x offset_y width height total_width total_height image_path;
+//
+// At the bottom of this section, we provide information about the spritesheet itself
+// $spritesheet: width height image $spritesheet-sprites;
+$form-item-button-left-hover-name: 'form-item-button-left-hover';
+$form-item-button-left-hover-x: 0px;
+$form-item-button-left-hover-y: 0px;
+$form-item-button-left-hover-offset-x: 0px;
+$form-item-button-left-hover-offset-y: 0px;
+$form-item-button-left-hover-width: 2000px;
+$form-item-button-left-hover-height: 21px;
+$form-item-button-left-hover-total-width: 2000px;
+$form-item-button-left-hover-total-height: 124px;
+$form-item-button-left-hover-image: '../images/sprite.png';
+$form-item-button-left-hover: (0px, 0px, 0px, 0px, 2000px, 21px, 2000px, 124px, '../images/sprite.png', 'form-item-button-left-hover', );
+$form-item-button-left-name: 'form-item-button-left';
+$form-item-button-left-x: 0px;
+$form-item-button-left-y: 23px;
+$form-item-button-left-offset-x: 0px;
+$form-item-button-left-offset-y: -23px;
+$form-item-button-left-width: 2000px;
+$form-item-button-left-height: 21px;
+$form-item-button-left-total-width: 2000px;
+$form-item-button-left-total-height: 124px;
+$form-item-button-left-image: '../images/sprite.png';
+$form-item-button-left: (0px, 23px, 0px, -23px, 2000px, 21px, 2000px, 124px, '../images/sprite.png', 'form-item-button-left', );
+$form-item-button-right-hover-name: 'form-item-button-right-hover';
+$form-item-button-right-hover-x: 0px;
+$form-item-button-right-hover-y: 103px;
+$form-item-button-right-hover-offset-x: 0px;
+$form-item-button-right-hover-offset-y: -103px;
+$form-item-button-right-hover-width: 8px;
+$form-item-button-right-hover-height: 21px;
+$form-item-button-right-hover-total-width: 2000px;
+$form-item-button-right-hover-total-height: 124px;
+$form-item-button-right-hover-image: '../images/sprite.png';
+$form-item-button-right-hover: (0px, 103px, 0px, -103px, 8px, 21px, 2000px, 124px, '../images/sprite.png', 'form-item-button-right-hover', );
+$form-item-button-right-name: 'form-item-button-right';
+$form-item-button-right-x: 10px;
+$form-item-button-right-y: 103px;
+$form-item-button-right-offset-x: -10px;
+$form-item-button-right-offset-y: -103px;
+$form-item-button-right-width: 4px;
+$form-item-button-right-height: 21px;
+$form-item-button-right-total-width: 2000px;
+$form-item-button-right-total-height: 124px;
+$form-item-button-right-image: '../images/sprite.png';
+$form-item-button-right: (10px, 103px, -10px, -103px, 4px, 21px, 2000px, 124px, '../images/sprite.png', 'form-item-button-right', );
+$form-item-text-left-focused-name: 'form-item-text-left-focused';
+$form-item-text-left-focused-x: 0px;
+$form-item-text-left-focused-y: 46px;
+$form-item-text-left-focused-offset-x: 0px;
+$form-item-text-left-focused-offset-y: -46px;
+$form-item-text-left-focused-width: 2000px;
+$form-item-text-left-focused-height: 17px;
+$form-item-text-left-focused-total-width: 2000px;
+$form-item-text-left-focused-total-height: 124px;
+$form-item-text-left-focused-image: '../images/sprite.png';
+$form-item-text-left-focused: (0px, 46px, 0px, -46px, 2000px, 17px, 2000px, 124px, '../images/sprite.png', 'form-item-text-left-focused', );
+$form-item-text-left-name: 'form-item-text-left';
+$form-item-text-left-x: 0px;
+$form-item-text-left-y: 65px;
+$form-item-text-left-offset-x: 0px;
+$form-item-text-left-offset-y: -65px;
+$form-item-text-left-width: 2000px;
+$form-item-text-left-height: 17px;
+$form-item-text-left-total-width: 2000px;
+$form-item-text-left-total-height: 124px;
+$form-item-text-left-image: '../images/sprite.png';
+$form-item-text-left: (0px, 65px, 0px, -65px, 2000px, 17px, 2000px, 124px, '../images/sprite.png', 'form-item-text-left', );
+$form-item-text-right-focused-name: 'form-item-text-right-focused';
+$form-item-text-right-focused-x: 0px;
+$form-item-text-right-focused-y: 84px;
+$form-item-text-right-focused-offset-x: 0px;
+$form-item-text-right-focused-offset-y: -84px;
+$form-item-text-right-focused-width: 1000px;
+$form-item-text-right-focused-height: 17px;
+$form-item-text-right-focused-total-width: 2000px;
+$form-item-text-right-focused-total-height: 124px;
+$form-item-text-right-focused-image: '../images/sprite.png';
+$form-item-text-right-focused: (0px, 84px, 0px, -84px, 1000px, 17px, 2000px, 124px, '../images/sprite.png', 'form-item-text-right-focused', );
+$form-item-text-right-name: 'form-item-text-right';
+$form-item-text-right-x: 1002px;
+$form-item-text-right-y: 84px;
+$form-item-text-right-offset-x: -1002px;
+$form-item-text-right-offset-y: -84px;
+$form-item-text-right-width: 4px;
+$form-item-text-right-height: 17px;
+$form-item-text-right-total-width: 2000px;
+$form-item-text-right-total-height: 124px;
+$form-item-text-right-image: '../images/sprite.png';
+$form-item-text-right: (1002px, 84px, -1002px, -84px, 4px, 17px, 2000px, 124px, '../images/sprite.png', 'form-item-text-right', );
+$win-corner-name: 'win-corner';
+$win-corner-x: 1008px;
+$win-corner-y: 84px;
+$win-corner-offset-x: -1008px;
+$win-corner-offset-y: -84px;
+$win-corner-width: 8px;
+$win-corner-height: 8px;
+$win-corner-total-width: 2000px;
+$win-corner-total-height: 124px;
+$win-corner-image: '../images/sprite.png';
+$win-corner: (1008px, 84px, -1008px, -84px, 8px, 8px, 2000px, 124px, '../images/sprite.png', 'win-corner', );
+$spritesheet-width: 2000px;
+$spritesheet-height: 124px;
+$spritesheet-image: '../images/sprite.png';
+$spritesheet-sprites: ($form-item-button-left-hover, $form-item-button-left, $form-item-button-right-hover, $form-item-button-right, $form-item-text-left-focused, $form-item-text-left, $form-item-text-right-focused, $form-item-text-right, $win-corner, );
+$spritesheet: (2000px, 124px, '../images/sprite.png', $spritesheet-sprites, );
+
+// The provided mixins are intended to be used with the array-like variables
+//
+// .icon-home {
+//   @include sprite-width($icon-home);
+// }
+//
+// .icon-email {
+//   @include sprite($icon-email);
+// }
+//
+// Example usage in HTML:
+//
+// `display: block` sprite:
+// <div class="icon-home"></div>
+//
+// To change `display` (e.g. `display: inline-block;`), we suggest using a common CSS class:
+//
+// // CSS
+// .icon {
+//   display: inline-block;
+// }
+//
+// // HTML
+// <i class="icon icon-home"></i>
+@mixin sprite-width($sprite) {
+  width: nth($sprite, 5);
+}
+
+@mixin sprite-height($sprite) {
+  height: nth($sprite, 6);
+}
+
+@mixin sprite-position($sprite) {
+  $sprite-offset-x: nth($sprite, 3);
+  $sprite-offset-y: nth($sprite, 4);
+  background-position: $sprite-offset-x  $sprite-offset-y;
+}
+
+@mixin sprite-image($sprite) {
+  $sprite-image: nth($sprite, 9);
+  background-image: url(#{$sprite-image});
+}
+
+@mixin sprite($sprite) {
+  @include sprite-image($sprite);
+  @include sprite-position($sprite);
+  @include sprite-width($sprite);
+  @include sprite-height($sprite);
+}
+
+// The `sprites` mixin generates identical output to the CSS template
+//   but can be overridden inside of SCSS
+//
+// @include sprites($spritesheet-sprites);
+@mixin sprites($sprites) {
+  @each $sprite in $sprites {
+    $sprite-name: nth($sprite, 10);
+    .#{$sprite-name} {
+      @include sprite($sprite);
+    }
+  }
+}

@@ -1,0 +1,48 @@
+
+.window {
+    border:          1px solid $win-border-outer-color;
+    display:         flex;
+    align-items:     stretch;
+    justify-content: stretch;
+}
+
+.window__inner {
+    @include pos-rel();
+
+    border:      1px solid $win-border-inner-color;
+    flex-grow:   1;
+    flex-shrink: 0;
+    background:  none $win-back1;
+    box-sizing:  border-box;
+    max-width:   100%;
+}
+
+.window__corner {
+    @include sprite( $win-corner );
+    @include pos-abs();
+
+    transform-origin: 50% 50%;
+}
+
+.window__corner_lt {
+    left: -2px;
+    top:  -2px;
+}
+
+.window__corner_rt {
+    right:     -2px;
+    top:       -2px;
+    transform: rotateZ(90deg);
+}
+
+.window__corner_lb {
+    left:      -2px;
+    bottom:    -2px;
+    transform: rotateZ(-90deg);
+}
+
+.window__corner_rb {
+    right:     -2px;
+    bottom:    -2px;
+    transform: rotateZ(-180deg);
+}

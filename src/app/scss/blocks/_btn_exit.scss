@@ -1,0 +1,5 @@
+
+.btn_exit {
+    @include pos-abs( 10px, 10px );
+    @include size( 120px );
+}

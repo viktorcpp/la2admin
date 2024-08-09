@@ -1,0 +1,66 @@
+
+.rbinfo {
+    display:        flex;
+    justify-items:  stretch;
+    align-items:    stretch;
+    font-size:      18px;
+    letter-spacing: 0.5px;
+}
+
+.rbinfo__cola {
+    flex-grow:   0;
+    flex-shrink: 0;
+    width:       30%;
+    box-sizing:  border-box;
+    padding:     10px 10px 10px 0;
+}
+
+.rbinfo__colb {
+    flex-grow:   1;
+    flex-shrink: 0;
+    padding:     10px;
+    text-overflow: ellipsis;
+}
+
+.rbinfo__name {
+    border-bottom:  1px solid $font-transparent;
+    padding-bottom: 2px;
+    transition:     0.2s border ease-in-out;
+    margin-right:   12px;
+
+    &:hover {
+        border-bottom: 1px solid $font-white1-a;
+    }
+}
+
+.rbinfo__lvl {
+    color:       $color-green1;
+    font-weight: bold;
+}
+
+.rbinfo__item {
+    margin-bottom: 10px;
+}
+
+.rbinfo__dropname {
+    display:    inline-block;
+    width:      50%;
+    color:      $font-white1;
+    transition: 0.2s color ease-in-out;
+}
+
+.rbinfo__minmax {
+    display:    inline-block;
+    width:      12%;
+    text-align: right;
+}
+
+.rbinfo__chance {
+    display:    inline-block;
+    width:      13%;
+    text-align: right;
+
+    sub {
+        font-size: 13px;
+    }
+}

@@ -1,0 +1,224 @@
+
+.input-text {
+    @include pos-abs(4px, 2px, 4px);
+
+    font:    normal normal 12px/12px 'HelveticaNeue';
+    color:   $font-white1;
+    padding: 0;
+    margin:  0;
+    border:  none;
+    z-index: 2;
+    display: block;
+    height:  13px;
+    background: none;
+}
+
+.input-submit {
+    @include pos-abs( 0, 0, 0, 0 );
+
+    font:       normal normal 12px/12px 'HelveticaNeue';
+    color:      $font-white1;
+    z-index:    5;
+    flex-grow:  1;
+    display:    block;
+    border:     none;
+    background: rgba( 255, 255, 255, 0 );
+    padding:    0;
+    margin:     0;
+    text-align: center;
+}
+
+.form-item {
+    display:         flex;
+    flex-flow:       row;
+    align-items:     stretch;
+    justify-content: stretch;
+
+    label {
+        padding:     1px 6px 0;
+        font-size:   12px;
+        line-height: 120%;
+        box-sizing:  border-box;
+        text-align:  right;
+    }
+}
+
+.form-item-text {
+    overflow: hidden;
+}
+
+.form-item-text-focused {
+    .form-item-text-back {
+        &:before {
+            @include sprite($form-item-text-left-focused);
+        }
+
+        &:after {
+            @include sprite($form-item-text-right-focused);
+        }
+    }
+}
+
+.form-item-submit {
+    overflow: hidden;
+}
+
+.form-item-text-back {
+    @include pos-rel();
+
+    height:       17px;
+    overflow:     hidden;
+    flex-grow:    1;
+    flex-shrink:  0;
+    margin-right: 42px;
+
+    &:before {
+        @include sprite($form-item-text-left);
+        @include pos-abs( 0, 0, 4px );
+
+        z-index: 1;
+        content: '';
+        display: block;
+    }
+
+    &:after {
+        @include sprite($form-item-text-right);
+        @include pos-abs( null, 0, 0 );
+
+        z-index: 1;
+        content: '';
+        display: block;
+    }
+}
+
+.form-item-submit-back {
+    @include pos-rel();
+
+    z-index:   1;
+    flex-grow: 1;
+    height:    21px;
+    overflow:  hidden;
+
+    &:before {
+        @include sprite( $form-item-button-left );
+        @include pos-abs( 0, 0, 4px );
+
+        display: block;
+        content: '';
+    }
+
+    &:after {
+        @include sprite( $form-item-button-right );
+        @include pos-abs( null, 0, 0 );
+
+        display: block;
+        content: '';
+    }
+}
+
+.form-item-submit-lbl {
+    @include pos-abs( 0, 0, 0, 0 );
+
+    color:          $font-yellow1;
+    z-index:        3;
+    text-align:     center;
+    line-height:    21px;
+    letter-spacing: 1px;
+}
+
+.form-item-hover {
+    //
+}
+
+.form-item-text:hover {
+    .form-item-text-left {
+        //@include sprite($form-item-text-left-hover);
+    }
+
+    .form-item-text-right {
+        //@include sprite($form-item-text-right-hover);
+    }
+}
+
+.form-item-submit:hover {
+    .form-item-submit-back {
+        &:before {
+            @include sprite( $form-item-button-left-hover );
+        }
+
+        &:after {
+            @include sprite( $form-item-button-right-hover );
+        }
+    }
+}
+
+.btn-link {
+    @include pos-rel();
+
+    display:        inline-block;
+    height:         21px;
+    z-index:        1;
+    overflow:       hidden;
+    letter-spacing: 1px;
+
+    .btn-link__svg {
+        display: none;
+    }
+
+    &:hover {
+        .btn-link__back {
+            &:before {
+                @include sprite( $form-item-button-left-hover );
+            }
+
+            &:after {
+                @include sprite( $form-item-button-right-hover );
+            }
+        }
+    }
+}
+
+.btn-link__back {
+    &:before {
+        @include sprite( $form-item-button-left );
+        @include pos-abs( 0, 0, 4px );
+
+        display: block;
+        content: '';
+    }
+
+    &:after {
+        @include sprite( $form-item-button-right );
+        @include pos-abs( null, 0, 0 );
+
+        display: block;
+        content: '';
+    }
+}
+
+.btn-link__lbl {
+    @include pos-abs( 0, 0, 0, 0 );
+
+    color:       $font-yellow1;
+    z-index:     3;
+    text-align:  center;
+    line-height: 21px;
+}
+
+.btn-link--loading {
+    .btn-link__lbl {
+        display: none;
+    }
+
+    .btn-link__svg {
+        display: block;
+    }
+}
+
+.btn-link__svg {
+    @include pos-abs( 50%, 50% );
+    @include size( 30px, 30px );
+
+    z-index: 100;
+    margin:  -15px 0 0 -15px;
+}
