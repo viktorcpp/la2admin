@@ -29,7 +29,6 @@ export default function CharacterBuffs() {
     }, []);
 
     async function HandleLink(charId, obj) {
-        console.log(charId);
         if( obj != null )
             obj.current.classList.add('btn-link--loading');
 
