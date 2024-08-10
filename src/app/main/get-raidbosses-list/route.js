@@ -15,8 +15,8 @@ export async function GET( req, res ) {
             npc.id, npc.level, npc.name, 
             droplist.itemId, 
             COALESCE(weapon.name,armor.name,etcitem.name) AS itemname,
-            droplist.min, droplist.max, 
-            droplist.chance 
+            droplist.min, droplist.max, droplist.chance,
+            COALESCE(weapon.iconname,armor.iconname,etcitem.iconname) AS iconname
             FROM npc 
             LEFT JOIN droplist ON npc.id=droplist.mobid 
             LEFT JOIN weapon   ON droplist.itemId=weapon.item_id 
@@ -24,8 +24,7 @@ export async function GET( req, res ) {
             LEFT JOIN etcitem  ON droplist.itemId=etcitem.item_id 
             
             WHERE npc.type='L2RaidBoss' AND level>=${req_level_from} AND level<${req_level_upto} 
-            ORDER BY npc.level, npc.name, itemname ASC
-            `;
+            ORDER BY npc.level, npc.name, itemname ASC`;
 
         const result = await excuteQuery( _sql_query );
 

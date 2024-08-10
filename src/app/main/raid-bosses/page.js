@@ -47,6 +47,7 @@ export default function Main() {
                     dropMin:  rboss.min,
                     dropMax:  rboss.max,
                     chance:   rboss.chance,
+                    iconName: rboss.iconname,
                 });
             }
 
