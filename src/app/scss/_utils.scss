@@ -48,6 +48,14 @@
 
 } // pos-abs
 
+@mixin pos-fix( $left:null, $top:null, $right:null, $bot:null, $z:null )
+{
+    position: fixed;
+
+    @include __pos-helper( $left, $top, $right, $bot, $z );
+
+} // pos-abs
+
 @mixin clear-list
 {
     list-style: none;

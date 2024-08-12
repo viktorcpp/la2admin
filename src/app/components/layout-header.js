@@ -1,5 +1,3 @@
-import Image from "next/image";
-import ImageLogo from "../images/logo.png";
 
 export default function PageHeader() {
     return (

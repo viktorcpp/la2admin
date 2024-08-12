@@ -1,0 +1,42 @@
+
+.castles_status_popup {
+    position:  fixed;
+    top:       20px;
+    left:      380px;
+    z-index:   1001;
+    min-width: 120px;
+}
+
+.castles_status_popup_inner {
+    box-sizing: border-box;
+    padding:    10px;
+}
+
+.castles_status_popup__title {
+    font-size:     22px;
+    margin-bottom: 10px;
+}
+
+.castles_status_popup__row {
+    margin-bottom: 4px;
+}
+
+.castles_status_popup__name {
+    //
+}
+
+.castles_status_popup__tax {
+    //
+}
+
+.castles_status_popup__clan {
+    //
+}
+
+.castles_status_popup__clan_lvl {
+    //
+}
+
+.castles_status_popup__siege_date {
+    //
+}

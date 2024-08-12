@@ -7,7 +7,7 @@ import {useSearchParams}     from 'next/navigation';
 
 import PageNavbar          from "../../components/navbar";
 import PageNavbarSubRBList from "../../components/navbar-sub-rblist";
-import NextBreadcrumb      from "../../components/NextBreadcrumb";
+import Breadcrumbs      from "../../components/breadcrumbs";
 import ButtonExit          from "../../components/button-exit";
 import RBInfoItem          from "../../components/rb-info-item";
 
@@ -68,7 +68,7 @@ export default function Main() {
         <div className="content__wrap">
             <div className="content__title">Raid Bosses</div>
             <div className="group">
-                <NextBreadcrumb
+                <Breadcrumbs
                     homeElement={'Home'}
                     separator={<span> | </span>}
                     activeClasses='text-amber-500'

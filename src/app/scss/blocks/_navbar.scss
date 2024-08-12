@@ -33,6 +33,10 @@
     &:hover {
       color: $color-gray2-a;
     }
+
+    &:focus {
+        outline: none;
+    }
 }
 
 .navbar_sub {

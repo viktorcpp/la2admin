@@ -14,7 +14,7 @@ let TBreadCrumbProps = {
     capitalizeLinks: false
 }
 
-const NextBreadcrumb = ({homeElement, separator, containerClasses, listClasses, activeClasses, capitalizeLinks}) => {
+const Breadcrumbs = ({homeElement, separator, containerClasses, listClasses, activeClasses, capitalizeLinks}) => {
 
     const paths     = usePathname();
     const pathNames = paths.split('/').filter( path => path );
@@ -42,4 +42,4 @@ const NextBreadcrumb = ({homeElement, separator, containerClasses, listClasses, 
     )
 }
 
-export default NextBreadcrumb
+export default Breadcrumbs
