@@ -1,6 +1,6 @@
 
 import React      from "react";
-import ButtonLink from "./button-link";
+import ButtonLink from "./ButtonLink";
 
 export default function ResetRaidbossesSpawn() {
 

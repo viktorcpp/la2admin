@@ -1,9 +1,9 @@
 
 import "./scss/main.scss";
 
-import PageHeader from './components/layout-header.js';
-import PageFooter from './components/layout-footer.js';
-import PageMain   from './components/layout-page-main.js';
+import PageHeader from './components/PageHeader.js';
+import PageFooter from './components/PageFooter.js';
+import PageMain   from './components/PageMain.js';
 
 export const metadata = {
   title:       "LA 2 Admin",

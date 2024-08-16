@@ -1,10 +1,9 @@
 
 "use client"
 
-import React from "react";
-
+import React                 from "react";
 import {useEffect, useState} from "react";
-import ButtonLink            from "./button-link";
+import ButtonLink            from "./ButtonLink";
 
 export default function CharacterBuffs() {
 

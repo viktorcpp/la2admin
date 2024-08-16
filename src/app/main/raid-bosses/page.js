@@ -5,11 +5,11 @@ import React                 from 'react';
 import {useEffect, useState} from "react";
 import {useSearchParams}     from 'next/navigation';
 
-import PageNavbar          from "../../components/navbar";
-import PageNavbarSubRBList from "../../components/navbar-sub-rblist";
-import Breadcrumbs      from "../../components/breadcrumbs";
-import ButtonExit          from "../../components/button-exit";
-import RBInfoItem          from "../../components/rb-info-item";
+import PageNavbar          from "../../components/PageNavbar";
+import PageNavbarSubRBList from "../../components/PageNavbarSubRBList";
+import Breadcrumbs      from "../../components/Breadcrumbs";
+import ButtonExit          from "../../components/ButtonExit";
+import RBInfoItem          from "../../components/RBInfoItem";
 
 export default function Main() {
 

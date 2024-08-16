@@ -1,4 +1,4 @@
-import LoadingSvg from "./loading-svg";
+import LoadingSvg from "./LoadingSvg";
 import Link from "next/link";
 import React from "react";
 

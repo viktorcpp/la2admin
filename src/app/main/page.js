@@ -1,11 +1,11 @@
 
 "use client"
 
-import PageNavbar           from '../components/navbar.js';
-import ButtonExit           from "../components/button-exit";
-import CharacterBuffs       from "../components/character-buffs";
-import ResetRaidbossesSpawn from "../components/reset-raidbosses-spawn";
-import AccountCreate        from "../components/account-create";
+import PageNavbar           from '../components/PageNavbar.js';
+import ButtonExit           from "../components/ButtonExit";
+import CharacterBuffs       from "../components/CharacterBuffs";
+import ResetRaidbossesSpawn from "../components/ResetRaidbossesSpawn";
+import AccountCreate        from "../components/AccountCreate";
 
 
 export default function Main() {
