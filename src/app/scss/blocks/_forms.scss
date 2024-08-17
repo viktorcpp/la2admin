@@ -1,8 +1,9 @@
 
-.input-text {
+.input-text,
+.input-search {
     @include pos-abs(4px, 2px, 4px);
 
-    font:    normal normal 12px/12px 'HelveticaNeue';
+    font:    normal normal 12px/12px 'Poppins';
     color:   $font-white1;
     padding: 0;
     margin:  0;

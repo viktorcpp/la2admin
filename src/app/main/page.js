@@ -6,6 +6,7 @@ import ButtonExit           from "../components/ButtonExit";
 import CharacterBuffs       from "../components/CharacterBuffs";
 import ResetRaidbossesSpawn from "../components/ResetRaidbossesSpawn";
 import AccountCreate        from "../components/AccountCreate";
+import SearchBar            from "../components/SearchBar";
 
 
 export default function Main() {
@@ -14,6 +15,9 @@ export default function Main() {
             <div className="content__title">Admin Panel</div>
             <div className="group">
                 <PageNavbar/>
+            </div>
+            <div className="group">
+                <SearchBar />
             </div>
             <div className="group">
                 <CharacterBuffs/>
