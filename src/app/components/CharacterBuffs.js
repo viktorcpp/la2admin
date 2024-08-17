@@ -20,6 +20,7 @@ export default function CharacterBuffs() {
                 },
             } );
             const res = await response.json();
+            console.log(res.charsList);
 
             setDataResponse(res.charsList);
         }

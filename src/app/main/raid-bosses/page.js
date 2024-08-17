@@ -7,7 +7,7 @@ import {useSearchParams}     from 'next/navigation';
 
 import PageNavbar          from "../../components/PageNavbar";
 import PageNavbarSubRBList from "../../components/PageNavbarSubRBList";
-import Breadcrumbs      from "../../components/Breadcrumbs";
+import Breadcrumbs         from "../../components/Breadcrumbs";
 import ButtonExit          from "../../components/ButtonExit";
 import RBInfoItem          from "../../components/RBInfoItem";
 
@@ -23,9 +23,9 @@ export default function Main() {
         async function getPageData() {
 
             const search   = searchParams.get('rblvl');
-            const request_ = search == null ? '?rblvl=20' : '?rblvl=' + search;
+            const request_ = search == null ? 20 : search;
 
-            const response = await fetch( '/main/get-raidbosses-list' + request_, {
+            const response = await fetch( '/main/get-raidbosses-list?rblvl=' + request_, {
                 method: "GET",
                 headers: {
                     "Content-Type": "application/json",

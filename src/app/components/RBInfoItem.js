@@ -7,7 +7,7 @@ export default function RBInfoItem(props) {
     const items_ = props.list.map((item, index) => {
         return (
             <div className="rbinfo__item" key={index}>
-                <Link href={"#" + item.itemId} className="rbinfo__dropname">
+                <Link href={"/main/item-info?itemid=" + item.itemId} className="rbinfo__dropname">
                     <img src={"/icons/" + item.iconName + ".png"} alt="" className="rbinfo__ico" width="32" height="32"/>
                     {item.itemName}
                 </Link>

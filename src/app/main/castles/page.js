@@ -87,10 +87,6 @@ export default function CastlesStatus() {
 
                 let months = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
                 let date = new Date( parseInt(castles_data_[castle_.castleId].siegeDate) + 1 );
-                let day = date.getDay() + 1;
-                let month = months[date.getMonth()];
-                let year = date.getFullYear();
-                let date_end = `${month} . ${day} . ${year}`;
 
                 castles_data_[castle_.castleId].siegeDate  = date.toLocaleDateString().replaceAll('/','.') + '  ' + date.toLocaleTimeString();
             }
