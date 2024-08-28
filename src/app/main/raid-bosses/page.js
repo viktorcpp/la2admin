@@ -51,10 +51,14 @@ export default function Main() {
                 });
             }
 
+            rboss_data = rboss_data.sort( ( a, b ) => {
+                if( a[0].name[0] < b[0].name[0] )
+                    return -1
+                return 1;
+            } );
             rboss_data = rboss_data.sort( ( a, b )=>{
                 if( a[0].level < b[0].level )
                     return -1
-
                 return 1;
             } );
 
@@ -88,7 +92,7 @@ export default function Main() {
                     return (
                         <div className="rbinfo" key={index}>
                             <div className="rbinfo__cola">
-                                <a href={"#" + rboss[0].id} className="rbinfo__name">{rboss[0].name}</a>
+                                <a href={"/main/mobinfo?id=" + rboss[0].id} className="rbinfo__name">{rboss[0].name}</a>
                                 <span className="rbinfo__lvl">{rboss[0].level}</span>
                             </div>
                             <div className="rbinfo__colb">

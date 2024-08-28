@@ -1,0 +1,21 @@
+
+.notfound {
+    @include size( 100%, 100% );
+
+    text-align:      center;
+    display:         flex;
+    align-items:     center;
+    justify-items:   center;
+    justify-content: center;
+    flex-flow:       column;
+}
+
+.notfound_code {
+    font-size:   250px;
+    line-height: 120%;
+}
+
+.notfound_text {
+    font-size:   80px;
+    line-height: 120%;
+}

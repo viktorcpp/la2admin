@@ -92,7 +92,6 @@ export async function GET( req, res ) {
     `;
 
     const result = await excuteQuery( sql_ );
-    console.log( result );
 
     return NextResponse.json({ itemInfo:result });
 }
