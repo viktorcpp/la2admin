@@ -4,6 +4,8 @@
 import React                from 'react';
 import {useEffect,useState} from "react";
 import {useSearchParams}    from "next/navigation";
+import Breadcrumbs from "../../components/Breadcrumbs";
+import PageNavbar from "../../components/PageNavbar";
 
 export default function PageItemInfo() {
 
@@ -44,62 +46,78 @@ export default function PageItemInfo() {
     }, []);
 
     return (
-        <div className="item_info">
-            {
-                dataResponse.map( (it, index) => {
-                    return (
-                        <div key={index}>
-                            <div className="item_info__name">
-                                <img src={"/icons/" + it.iconName + ".png"} alt="" className="item_info__ico" width="32" height="32"/>
-                                {it.itemName}
-                            </div>
+        <div className="content__wrap">
+            <div className="content__title">Item Info</div>
+            <div className="group">
+                <Breadcrumbs
+                    homeElement={'Home'}
+                    separator={<span> | </span>}
+                    activeClasses='text-amber-500'
+                    containerClasses='flex py-5 bg-gradient-to-r from-purple-600 to-blue-600'
+                    listClasses='hover:underline mx-2 font-bold'
+                    capitalizeLinks
+                />
+            </div>
+            <div className="group">
+                <PageNavbar/>
+            </div>
+            <div className="item_info">
+                {
+                    dataResponse.map( (it, index) => {
+                        return (
+                            <div key={index}>
+                                <div className="item_info__name">
+                                    <img src={"/icons/" + it.iconName + ".png"} alt="" className="item_info__ico" width="32" height="32"/>
+                                    {it.itemName}
+                                </div>
 
-                            <table className="item_info__table">
-                            <thead>
-                            <tr>
-                                {it.pDam.length >     0 ? <th>PAtk.</th> : ""}
-                                {it.mDam.length >     0 ? <th>MAtk.</th> : ""}
-                                {it.pDef.length >     0 ? <th>PDef.</th> : ""}
-                                {it.mDef.length >     0 ? <th>MDef.</th> : ""}
-                                {it.shieldDef >       0 ? <th>Shield Def</th> : ""}
-                                {it.shieldDefRate >   0 ? <th>Def Rate</th> : ""}
-                                {it.atkSpeed.length > 0 ? <th>Atk. Speed</th> : ""}
-                                {it.mpBonus.length >  0 ? <th>MP Bonus</th> : ""}
-                                {it.mpConsume >       0 ? <th>MP Consume</th> : ""}
-                                {it.soulCount >       0 ? <th>Soulshot Use</th> : ""}
-                                {it.spirCount >       0 ? <th>Spiritshot Use</th> : ""}
-                                {it.critValue >       0 ? <th>Crit.</th> : ""}
-                                <th>Weight</th>
-                                <th>Cry</th>
-                                <th>Cry Count</th>
-                                <th>Price</th>
-                            </tr>
-                            </thead>
-                            <tbody>
-                            <tr>
-                                {it.pDam.length >     0 ? <td>{it.pDam}</td> : ""}
-                                {it.mDam.length >     0 ? <td>{it.mDam}</td> : ""}
-                                {it.pDef.length >     0 ? <td>{it.pDef}</td> : ""}
-                                {it.mDef.length >     0 ? <td>{it.mDef}</td> : ""}
-                                {it.shieldDef >       0 ? <td>{it.shieldDef}</td> : ""}
-                                {it.shieldDefRate >   0 ? <td>{it.shieldDefRate}</td> : ""}
-                                {it.atkSpeed.length > 0 ? <td>{it.atkSpeed}</td> : ""}
-                                {it.mpBonus.length >  0 ? <td>{it.mpBonus}</td> : ""}
-                                {it.mpConsume >       0 ? <td>{it.mpConsume}</td> : ""}
-                                {it.soulCount >       0 ? <td>{it.soulCount}</td> : ""}
-                                {it.spirCount >       0 ? <td>{it.spirCount}</td> : ""}
-                                {it.critValue >       0 ? <td>{it.critValue}</td> : ""}
-                                <td>{it.itemWeight}</td>
-                                <td>{it.crystalType.toUpperCase()}</td>
-                                <td>{it.crystalCount}</td>
-                                <td>{FormatCurr( it.price ) }</td>
-                            </tr>
-                            </tbody>
-                            </table>
-                        </div>
-                    )
-                })
-            }
+                                <table className="item_info__table">
+                                <thead>
+                                <tr>
+                                    {it.pDam.length >     0 ? <th>PAtk.</th> : ""}
+                                    {it.mDam.length >     0 ? <th>MAtk.</th> : ""}
+                                    {it.pDef.length >     0 ? <th>PDef.</th> : ""}
+                                    {it.mDef.length >     0 ? <th>MDef.</th> : ""}
+                                    {it.shieldDef >       0 ? <th>Shield Def</th> : ""}
+                                    {it.shieldDefRate >   0 ? <th>Def Rate</th> : ""}
+                                    {it.atkSpeed.length > 0 ? <th>Atk. Speed</th> : ""}
+                                    {it.mpBonus.length >  0 ? <th>MP Bonus</th> : ""}
+                                    {it.mpConsume >       0 ? <th>MP Consume</th> : ""}
+                                    {it.soulCount >       0 ? <th>Soulshot Use</th> : ""}
+                                    {it.spirCount >       0 ? <th>Spiritshot Use</th> : ""}
+                                    {it.critValue >       0 ? <th>Crit.</th> : ""}
+                                    <th>Weight</th>
+                                    <th>Cry</th>
+                                    <th>Cry Count</th>
+                                    <th>Price</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr>
+                                    {it.pDam.length >     0 ? <td>{it.pDam}</td> : ""}
+                                    {it.mDam.length >     0 ? <td>{it.mDam}</td> : ""}
+                                    {it.pDef.length >     0 ? <td>{it.pDef}</td> : ""}
+                                    {it.mDef.length >     0 ? <td>{it.mDef}</td> : ""}
+                                    {it.shieldDef >       0 ? <td>{it.shieldDef}</td> : ""}
+                                    {it.shieldDefRate >   0 ? <td>{it.shieldDefRate}</td> : ""}
+                                    {it.atkSpeed.length > 0 ? <td>{it.atkSpeed}</td> : ""}
+                                    {it.mpBonus.length >  0 ? <td>{it.mpBonus}</td> : ""}
+                                    {it.mpConsume >       0 ? <td>{it.mpConsume}</td> : ""}
+                                    {it.soulCount >       0 ? <td>{it.soulCount}</td> : ""}
+                                    {it.spirCount >       0 ? <td>{it.spirCount}</td> : ""}
+                                    {it.critValue >       0 ? <td>{it.critValue}</td> : ""}
+                                    <td>{it.itemWeight}</td>
+                                    <td>{it.crystalType.toUpperCase()}</td>
+                                    <td>{it.crystalCount}</td>
+                                    <td>{FormatCurr( it.price ) }</td>
+                                </tr>
+                                </tbody>
+                                </table>
+                            </div>
+                        )
+                    })
+                }
+            </div>
         </div>
     )
 }
