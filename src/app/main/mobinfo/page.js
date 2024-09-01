@@ -1,53 +1,100 @@
 
-import React             from "react";
-import { NextResponse  } from 'next/server'
+"use client"
+
+import React, {useEffect, useState} from "react";
+import { NextResponse  }   from 'next/server'
+import { useSearchParams } from "next/navigation";
 
 import Breadcrumbs from "../../components/Breadcrumbs";
 import PageNavbar  from "../../components/PageNavbar";
-import excuteQuery from '../../lib/db'
+import MobInfoItem from "../../components/MobInfoItem";
 
-export default function Page({ params, searchParams, }) {
+export default function MobInfo() {
 
-    let sql_result = [];
-    const search_id = searchParams['id'];
-    const sql_ = `SELECT
+    const [dataResponse, setDataResponse] = useState([]);
+    const searchParams                    = useSearchParams();
 
-        CAST(npc.id AS CHAR) AS mobId,
-        npc.name AS mobName,
-        npc.level AS mobLevel,
-        npc.type AS mobType,
-        CAST(npc.hp AS CHAR) AS mobHp,
-        CAST(npc.mp AS CHAR) AS mobMp,
-        CAST(npc.str AS CHAR) AS mobStr,
-        CAST(npc.con AS CHAR) AS mobCon,
-        CAST(npc.dex AS CHAR) AS mobDex,
-        CAST(npc.int AS CHAR) AS mobInt,
-        CAST(npc.wit AS CHAR) AS mobWit,
-        CAST(npc.men AS CHAR) AS mobMen,
-        CAST(npc.patk AS CHAR) AS mobPAtk,
-        CAST(npc.pdef AS CHAR) AS mobPDef,
-        CAST(npc.matk AS CHAR) AS mobMAtk,
-        CAST(npc.mdef AS CHAR) AS mobMDef,
-        
-        CAST(droplist.itemId AS CHAR) AS dropItemId,
-        CAST(droplist.min AS CHAR) AS dropMin,
-        CAST(droplist.max AS CHAR) AS dropMax,
-        CAST(droplist.category AS CHAR) AS dropCategory,
-        CAST(droplist.chance AS CHAR) AS dropChance
+    let mobInfo = [{
+        mobId:    "",
+        mobName:  "",
+        mobLevel: "",
+        mobType:  "",
+        mobHp:    "",
+        mobMp:    "",
+        mobStr:   "",
+        mobDex:   "",
+        mobCon:   "",
+        mobInt:   "",
+        mobWit:   "",
+        mobMen:   "",
+        mobPAtk:  "",
+        mobMAtk:  "",
+        mobPDef:  "",
+        mobMDef:  "",
+        dropList: [
+            {
+                itemId:       "",
+                itemName:     "",
+                itemMin:      "",
+                itemMax:      "",
+                itemChance:   "",
+                itemCategory: "",
+            },
+        ],
+    }];
 
-        FROM npc
-        LEFT JOIN droplist ON npc.id=droplist.mobId
-        WHERE npc.id=${search_id}`;
+    useEffect(() => {
+        async function getPageData() {
+            let   searchId = searchParams.get('id');
+                  searchId = searchId == null ? 0 : searchId;
+            const response = await fetch( '/main/get-mobinfo?id=' + searchId, {
+                method: "GET",
+                headers: { "Content-Type": "application/json", },
+            } );
+            const res = await response.json();
 
-    async function getData() {
-        sql_result = await excuteQuery( sql_ );
-    }
+            // clear arr
+            mobInfo[0].dropList = [];
+            for( let x = 0; x < res.mobinfo.length; x++ ) {
+                let item_ = res.mobinfo[x];
 
-    getData();
+                mobInfo[0].mobId    = item_.mobId;
+                mobInfo[0].mobName  = item_.mobName;
+                mobInfo[0].mobLevel = item_.mobLevel;
+                mobInfo[0].mobType  = item_.mobType;
+                mobInfo[0].mobHp    = item_.mobHp;
+                mobInfo[0].mobMp    = item_.mobMp;
+                mobInfo[0].mobStr   = item_.mobStr;
+                mobInfo[0].mobDex   = item_.mobDex;
+                mobInfo[0].mobCon   = item_.mobCon;
+                mobInfo[0].mobInt   = item_.mobInt;
+                mobInfo[0].mobWit   = item_.mobWit;
+                mobInfo[0].mobMen   = item_.mobMen;
+                mobInfo[0].mobPAtk  = item_.mobPAtk;
+                mobInfo[0].mobMAtk  = item_.mobMAtk;
+                mobInfo[0].mobPDef  = item_.mobPDef;
+                mobInfo[0].mobMDef  = item_.mobMDef;
+
+                mobInfo[0].dropList.push({
+                    itemId:       item_.dropItemId,
+                    itemName:     item_.itemName,
+                    itemIcon:     item_.itemIcon,
+                    itemMin:      item_.dropMin,
+                    itemMax:      item_.dropMax,
+                    itemChance:   item_.dropChance,
+                    itemCategory: item_.dropCategory,
+                });
+            }
+
+            setDataResponse( mobInfo );
+        }
+        getPageData();
+
+    }, []);
 
     return (
         <div className="content__wrap">
-            <div className="content__title">Raid Bosses</div>
+            <div className="content__title">Mob Info</div>
             <div className="group">
                 <Breadcrumbs
                     homeElement={'Home'}
@@ -61,15 +108,23 @@ export default function Page({ params, searchParams, }) {
             <div className="group">
                 <PageNavbar/>
             </div>
-            <div className="group">
-                {
-                    ( sql_result || [] ).map( (val_, index_) => {
-                        return(
-                            <div key={index_}>123</div>
-                        )
-                    } )
-                }
-            </div>
+            {
+                ( dataResponse || [] ).map( ( val_, index ) => {
+                    return (
+                        <div className="group" key={index}>
+                            <div className="mobinfo">
+                                <div className="mobinfo__cola">
+                                    <span className="mobinfo__name">{val_.mobName}</span>
+                                    <span className="mobinfo__lvl">{val_.mobLevel}</span>
+                                </div>
+                                <div className="mobinfo__colb">
+                                    <MobInfoItem list={dataResponse}  />
+                                </div>
+                            </div>
+                        </div>
+                    )
+                } )
+            }
         </div>
     )
 }
