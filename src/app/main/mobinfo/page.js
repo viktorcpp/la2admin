@@ -8,11 +8,13 @@ import { useSearchParams } from "next/navigation";
 import Breadcrumbs from "../../components/Breadcrumbs";
 import PageNavbar  from "../../components/PageNavbar";
 import MobInfoItem from "../../components/MobInfoItem";
+import MobInfoLoc  from "../../components/MobInfoLoc";
 
 export default function MobInfo() {
 
-    const [dataResponse, setDataResponse] = useState([]);
-    const searchParams                    = useSearchParams();
+    const [dataMobInfo, setDataMobInfo] = useState([]);
+    const [dataMobLoc,  setDataMobLoc]  = useState([]);
+    const searchParams                  = useSearchParams();
 
     let mobInfo = [{
         mobId:    "",
@@ -47,16 +49,16 @@ export default function MobInfo() {
         async function getPageData() {
             let   searchId = searchParams.get('id');
                   searchId = searchId == null ? 0 : searchId;
-            const response = await fetch( '/main/get-mobinfo?id=' + searchId, {
+            const respMobInfo = await fetch( '/main/get-mobinfo?id=' + searchId, {
                 method: "GET",
                 headers: { "Content-Type": "application/json", },
             } );
-            const res = await response.json();
+            const resMobInfo = await respMobInfo.json();
 
             // clear arr
             mobInfo[0].dropList = [];
-            for( let x = 0; x < res.mobinfo.length; x++ ) {
-                let item_ = res.mobinfo[x];
+            for( let x = 0; x < resMobInfo.mobinfo.length; x++ ) {
+                let item_ = resMobInfo.mobinfo[x];
 
                 mobInfo[0].mobId    = item_.mobId;
                 mobInfo[0].mobName  = item_.mobName;
@@ -86,7 +88,17 @@ export default function MobInfo() {
                 });
             }
 
-            setDataResponse( mobInfo );
+            setDataMobInfo( mobInfo );
+
+            // MOB LOC
+
+            const respMobLoc = await fetch( '/main/get-mobloc?id=' + searchId, {
+                method: "GET",
+                headers: { "Content-Type": "application/json", },
+            } );
+            const resMobLoc = await respMobLoc.json();
+
+            setDataMobLoc( [resMobLoc] );
         }
         getPageData();
 
@@ -109,7 +121,7 @@ export default function MobInfo() {
                 <PageNavbar/>
             </div>
             {
-                ( dataResponse || [] ).map( ( val_, index ) => {
+                ( dataMobInfo || [] ).map( ( val_, index ) => {
                     return (
                         <div className="group" key={index}>
                             <div className="mobinfo">
@@ -118,13 +130,14 @@ export default function MobInfo() {
                                     <span className="mobinfo__lvl">{val_.mobLevel}</span>
                                 </div>
                                 <div className="mobinfo__colb">
-                                    <MobInfoItem list={dataResponse}  />
+                                    <MobInfoItem list={dataMobInfo}  />
                                 </div>
                             </div>
                         </div>
                     )
                 } )
             }
+            <MobInfoLoc coords={dataMobLoc} />
         </div>
     )
 }

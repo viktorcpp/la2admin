@@ -1,75 +1,71 @@
 
 .mobinfo {
-  display:        flex;
-  justify-items:  stretch;
-  align-items:    stretch;
-  font-size:      18px;
-  letter-spacing: 0.5px;
+    display:        flex;
+    justify-items:  stretch;
+    align-items:    stretch;
+    font-size:      18px;
+    letter-spacing: 0.5px;
 }
 
 .mobinfo__cola {
-  flex-grow:   0;
-  flex-shrink: 0;
-  width:       30%;
-  box-sizing:  border-box;
-  padding:     10px 10px 10px 0;
+    flex-grow:   0;
+    flex-shrink: 0;
+    width:       30%;
+    box-sizing:  border-box;
+    padding:     10px 10px 10px 0;
 }
 
 .mobinfo__colb {
-  flex-grow:   1;
-  flex-shrink: 0;
-  padding:     10px;
-  text-overflow: ellipsis;
+    flex-grow:     1;
+    flex-shrink:   0;
+    padding:       10px;
+    text-overflow: ellipsis;
 }
 
 .mobinfo__name {
-  border-bottom:  1px solid $font-transparent;
-  padding-bottom: 2px;
-  transition:     0.2s border ease-in-out;
-  margin-right:   12px;
-
-  &:hover {
-    border-bottom: 1px solid $font-white1-a;
-  }
+    border-bottom:  1px solid $font-transparent;
+    padding-bottom: 2px;
+    transition:     0.2s border ease-in-out;
+    margin-right:   12px;
 }
 
 .mobinfo__lvl {
-  color:       $color-green1;
-  font-weight: bold;
+    color:       $color-green1;
+    font-weight: bold;
 }
 
 .mobinfo__item {
-  margin-bottom: 4px;
+    margin-bottom: 4px;
 }
 
 .mobinfo__dropname {
-  display:    inline-block;
-  width:      50%;
-  color:      $font-white1;
-  transition: 0.2s color ease-in-out;
+    display:    inline-block;
+    width:      50%;
+    color:      $font-white1;
+    transition: 0.2s color ease-in-out;
 
-  &:focus {
-    outline: none;
-  }
+    &:focus {
+        outline: none;
+    }
 }
 
 .mobinfo__minmax {
-  display:    inline-block;
-  width:      12%;
-  text-align: right;
+    display:    inline-block;
+    width:      12%;
+    text-align: right;
 }
 
 .mobinfo__chance {
-  display:    inline-block;
-  width:      13%;
-  text-align: right;
+    display:    inline-block;
+    width:      13%;
+    text-align: right;
 
-  sub {
-    font-size: 13px;
-  }
+    sub {
+        font-size: 13px;
+    }
 }
 
 .mobinfo__ico {
-  margin-right: 10px;
-  border:       1px solid gray;
+    margin-right: 10px;
+    border:       1px solid gray;
 }

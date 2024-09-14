@@ -1,0 +1,23 @@
+
+.mob_info_loc {
+    @include pos-rel();
+
+    z-index: 1;
+}
+
+.mob_info_loc_map {
+    display:   block;
+    max-width: 100%;
+    height:    auto;
+}
+
+.mob_info_loc_marker {
+    @include pos-abs();
+    @include size( 8px, 8px );
+
+    z-index:       10;
+    background:    none red;
+    border:        1px solid yellow;
+    border-radius: 50%;
+    margin:        -4px 0 0 -4px;
+}
